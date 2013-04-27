@@ -70,27 +70,26 @@
 
 		<dl class="item-address">
 			
-			<dt class="title"><h4>{__ 'Our address'}</h4></dt>
+		<dt class="title"><h4>{__ 'Our address'}</h4></dt>
 
- 			{if $options['address']}
-		    <dt class="address">{__ 'Address:'}</dt>
-		    <dd class="data">{!$options['address']}</dd>
-		    {/if}
+ 		{if $options['address']}
+		<dt class="address">{__ 'Address:'}</dt>
+		<dd class="data">{!$options['address']}</dd>
+		{/if}
 		     
-		    {if $options['gpsLatitude'] && is_mobile()}
-        	    <dt class="gps">{__ 'GPS:'}</dt>
+		{if $options['gpsLatitude'] && is_mobile()}
+		<dt class="gps">{__ 'GPS:'}</dt>
 
-    		     {if (is_iphone($version))}
-                    <dd class="data"><a href="comgooglemaps://?daddr={!$options['address']}" class="google button">Google Maps</a></dd>
-                 {else}
-{if (is_ipad($version))}
-<dd class="data"><a href="comgooglemaps://?daddr={!$options['address']}" class="google button">Google Maps</a></dd>
-{else}
-                   <dd class="data">{$options['gpsLatitude']}, {$options['gpsLongitude']}</dd>
-                 {/if}
-{/if}
-
-		    {/if}
+		{if (is_iphone($version))}
+		<dd class="data"><a href="comgooglemaps://?daddr={!$options['address']}" class="google button">Google Maps</a></dd>
+		{else}
+		{if (is_ipad($version))}
+		<dd class="data"><a href="comgooglemaps://?daddr={!$options['address']}" class="google button">Google Maps</a></dd>
+		{else}
+		<dd class="data">{$options['gpsLatitude']}, {$options['gpsLongitude']}</dd>
+		{/if}
+		{/if}
+		{/if}
 		    
 		    {if $options['telephone']}
 		    <dt class="phone">{__ 'Telephone:'}</dt>
